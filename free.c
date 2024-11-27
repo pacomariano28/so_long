@@ -6,7 +6,7 @@
 /*   By: frmarian <frmarian@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 12:54:04 by frmarian          #+#    #+#             */
-/*   Updated: 2024/11/26 11:27:43 by frmarian         ###   ########.fr       */
+/*   Updated: 2024/11/27 10:44:20 by frmarian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,10 @@ void	free_all(t_game *game)
 	destroy_images(game);
 	free_matrix(game->map);
 	free_matrix(game->map_copy);
-	mlx_destroy_window(game->mlx, game->win);
-	mlx_destroy_display(game->mlx);
-	free(game->mlx);
+	if (game->mlx)
+	{
+		mlx_destroy_window(game->mlx, game->win);
+		mlx_destroy_display(game->mlx);
+		free(game->mlx);
+	}
 }

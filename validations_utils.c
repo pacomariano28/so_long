@@ -6,7 +6,7 @@
 /*   By: frmarian <frmarian@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:38:27 by frmarian          #+#    #+#             */
-/*   Updated: 2024/11/26 14:09:57 by frmarian         ###   ########.fr       */
+/*   Updated: 2024/11/27 10:32:32 by frmarian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	reachable_entities(t_game *game, t_entities entities, t_coords p_coords)
 	flood_fill(p_coords.x, p_coords.y, &entities, game->map);
 	if (entities.coin_counter > 0 || entities.exit_counter != 2)
 	{
-		free(game);
+		free_all(game);
 		error_msg("Error: No valid exit found or coins remaining");
 	}
 }

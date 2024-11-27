@@ -6,7 +6,7 @@
 /*   By: frmarian <frmarian@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:27:48 by frmarian          #+#    #+#             */
-/*   Updated: 2024/11/26 12:17:49 by frmarian         ###   ########.fr       */
+/*   Updated: 2024/11/27 10:46:24 by frmarian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	validate_body(t_game game, t_entities *entities)
 		{
 			free_matrix(game.map);
 			free_matrix(game.map_copy);
-			error_msg("Error: validate_body: walls or len are incorrect!");
+			error_msg("Error: walls or len are incorrect.");
 		}
 		i++;
 	}

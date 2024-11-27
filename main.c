@@ -6,7 +6,7 @@
 /*   By: frmarian <frmarian@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:17:05 by frmarian          #+#    #+#             */
-/*   Updated: 2024/11/26 11:27:43 by frmarian         ###   ########.fr       */
+/*   Updated: 2024/11/27 10:42:13 by frmarian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main(int ac, char **av)
 
 	if (ac == 2)
 	{
+		ft_bzero(&game, sizeof(game));
 		map_validation(&game, av[1]);
 		init_mlx(&game);
 		init_sprites(&game);
