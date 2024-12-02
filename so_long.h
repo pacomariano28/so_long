@@ -16,6 +16,7 @@
 # include <fcntl.h>
 # include "lib/minilibx/mlx.h"
 # include "lib/libft/libft.h"
+# include <X11/X.h>
 
 # define TILE_SIZE 70
 
