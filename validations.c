@@ -6,7 +6,7 @@
 /*   By: frmarian <frmarian@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:27:48 by frmarian          #+#    #+#             */
-/*   Updated: 2024/11/27 10:46:24 by frmarian         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:08:16 by frmarian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	validate_body(t_game game, t_entities *entities)
 		}
 		i++;
 	}
-	validate_entities(entities, game);
+	validate_entities(entities, &game);
 }
 
 bool	validate_walls(char *lines)
@@ -61,13 +61,13 @@ bool	validate_len(char *str, int len)
 	return (true);
 }
 
-void	validate_entities(t_entities *entities, t_game game)
+void	validate_entities(t_entities *entities, t_game *game)
 {
 	if (entities->player_counter != 1
 		|| entities->exit_counter != 1
 		|| entities->coin_counter < 1)
 	{
-		free_matrix(game.map);
+		free_all(game);
 		error_msg("Error: validate_entities: wrong entities counter");
 	}
 }
